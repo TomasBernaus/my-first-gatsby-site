@@ -4,8 +4,8 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 
-const PlantillaProjecte = ({data}) => {
-  const post = data.nodeProjecte;
+const PlantillaArticle = ({data}) => {
+  const post = data.nodeArticle;
 
   return (
     <Layout>
@@ -16,23 +16,15 @@ const PlantillaProjecte = ({data}) => {
 };
 
 export const query = graphql`
-query($ProjecteId: String!) {
-  nodeProjecte(id: {eq: $ProjecteId}) {
+query($ArticleId: String!) {
+  nodeArticle(id: {eq: $ArticleId}) {
     id
     title
     body {
       processed
     }
-    field_imatge {
-      alt
-    }
-    relationships {
-      field_imatge {
-        publicUrl
-      }
-    }
   }
 }
 `;
 
-export default PlantillaProjecte;
+export default PlantillaArticle;
