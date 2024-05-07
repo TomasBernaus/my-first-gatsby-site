@@ -16,5 +16,13 @@ module.exports = {
     },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        skipFileDownloads: true,
+        baseUrl: `http://localhost/drupal/drupal/web/`,
+        apiBase: `jsonapi`, // optional, defaults to `jsonapi`
+      },
+    },
   ],
 };

@@ -3,17 +3,18 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
-const IndexPage = ({ data }) => {
+const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="My Blog Posts">
       {
-        data.allNodeProjecte.nodes.map(node => (
+        data.allNodeProjecte.edges.map(({ node }) => (
           <article key={node.id}>
             <h2>
-              <Link to={`/blog${node.path.alias}`}>
+              <Link to={`${node.path.alias}`}>
                 {node.title}
               </Link>
             </h2>
+            <p>{node.body.summary}</p>
           </article>
         ))
       }
@@ -22,22 +23,24 @@ const IndexPage = ({ data }) => {
 }
 
 export const query = graphql`
-query MyQuery {
-  allNodeProjecte {
-      nodes {
-        id
-        title
-        body {
-          processed
-        }
-        path {
-          alias
+  query {
+    allNodeProjecte {
+      edges {
+        node {
+          body {
+            summary
+          }
+          path {
+            alias
+          }
+          title
+          id
         }
       }
     }
-}
+  }
 `
 
 export const Head = () => <Seo title="My Blog Posts" />
 
-export default IndexPage
+export default BlogPage
