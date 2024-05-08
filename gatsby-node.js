@@ -4,7 +4,7 @@ const { graphqlTypegen } = require('./gatsby-config');
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
-
+// projectes
   const projectes = await graphql(`
     query MyQuery {
         allNodeProjecte {
@@ -24,14 +24,16 @@ exports.createPages = async ({ actions, graphql }) => {
 
   projectes.data.allNodeProjecte.nodes.map(projecteData =>
     createPage({
-      path: `/blog${projecteData.path.alias}`,
+      path: projecteData.path.alias,
       component: path.resolve('src/templates/pages.js'),
       context: {
         ProjecteId: projecteData.id,
       },
     })
   )
-
+  // fi projectes
+  
+  // articles
   const articles = await graphql(`
   query MyQuery {
     allNodeArticle {
@@ -49,13 +51,15 @@ exports.createPages = async ({ actions, graphql }) => {
   }
   `);
 
-articles.data.allNodeArticle.nodes.map(articleData =>
-  createPage({
-    path: `/blog${articleData.path.alias}`,
-    component: path.resolve('src/templates/article.js'),
-    context: {
-      ArticleId: articleData.id,
-    },
-  })
-)
+  articles.data.allNodeArticle.nodes.map(articleData =>
+    createPage({
+      path: articleData.path.alias,
+      component: path.resolve('src/templates/article.js'),
+      context: {
+        ArticleId: articleData.id,
+      },
+    })
+  )
+  //fi articles
+
 }

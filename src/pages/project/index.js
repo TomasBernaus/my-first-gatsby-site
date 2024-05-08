@@ -5,9 +5,9 @@ import Seo from '../../components/seo'
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout pageTitle="Articles">
+    <Layout pageTitle="Projectes">
       {
-        data.allNodeArticle.nodes.map(node => (
+        data.allNodeProjecte.nodes.map(node => (
           <article key={node.id}>
             <h2>
               <Link to={node.path.alias}>
@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
 query MyQuery {
-  allNodeArticle {
+  allNodeProjecte {
     nodes {
       id
       title
@@ -33,16 +33,11 @@ query MyQuery {
       path {
         alias
       }
-      field_image {
-        alt
-        title
-        drupal_internal__target_id
-      }
     }
   }
 }
 `
 
-export const Head = () => <Seo title="Blog" />
+export const Head = () => <Seo title="Projectes" />
 
 export default IndexPage

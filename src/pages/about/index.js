@@ -1,20 +1,20 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+import Layout from '../../components/layout'
+import Seo from '../../components/seo'
 
 const IndexPage = ({ data }) => {
-  const homePage = data.allNodePage.edges.find(edge => edge.node.title === "Home");
+  const quiSomPage = data.allNodePage.edges.find(edge => edge.node.title === "Qui som");
 
-  if (!homePage) {
+  if (!quiSomPage) {
     return (
       <Layout pageTitle="About us">
-        <p>No s'ha trobat la página "Home".</p>
+        <p>No s'ha trobat la página "Qui som".</p>
       </Layout>
     );
   }
 
-  const { id, title, body } = homePage.node;
+  const { id, title, body } = quiSomPage.node;
 
   return (
     <Layout pageTitle={title}>
@@ -44,6 +44,6 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Qui som" />
 
 export default IndexPage
