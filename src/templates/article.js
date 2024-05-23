@@ -11,14 +11,15 @@ const PlantillaArticle = ({data}) => {
     <Layout>
       <h1>{post.title}</h1>
       <div dangerouslySetInnerHTML={{ __html:post.body.processed}}/>
-      {post.relationships && post.relationships.field_image && (
-        <img
-          src={post.relationships.field_image.publicUrl}
-          alt={post.field_image.alt} 
-          style={{ maxWidth: '100%', height: 'auto' }}
-
-        />
-      )}
+      {post.relationships && post.relationships.field_image 
+      // && (
+        // <img
+        //   src={post.relationships.field_image.publicUrl}
+        //   alt={post.field_image.alt} 
+        //   style={{ maxWidth: '100%', height: 'auto' }}
+        // />
+      // )
+      }
     </Layout>
   )
 };
@@ -30,14 +31,6 @@ query($ArticleId: String!) {
     title
     body {
       processed
-    }
-    field_image {
-      alt
-    }
-    relationships {
-      field_image {
-        publicUrl
-      }
     }
   }
 }

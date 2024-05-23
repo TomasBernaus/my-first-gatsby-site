@@ -8,7 +8,7 @@ const IndexPage = ({ data }) => {
 
   if (!homePage) {
     return (
-      <Layout pageTitle="About us">
+      <Layout pageTitle="Home">
         <p>No s'ha trobat la página "Home".</p>
       </Layout>
     );

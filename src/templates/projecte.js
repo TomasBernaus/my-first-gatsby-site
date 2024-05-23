@@ -11,6 +11,15 @@ const PlantillaProjecte = ({data}) => {
     <Layout>
       <h1>{post.title}</h1>
       <div dangerouslySetInnerHTML={{ __html:post.body.processed}}/>
+      {post.relationships && post.relationships.field_imatge
+      //  && (
+      //   <img
+      //     src={post.relationships.field_imatge.publicUrl}
+      //     alt={post.field_imatge.alt} 
+      //     style={{ maxWidth: '100%', height: 'auto' }}
+      //   />
+      // )
+      }
     </Layout>
   )
 };
@@ -22,14 +31,6 @@ query($ProjecteId: String!) {
     title
     body {
       processed
-    }
-    field_imatge {
-      alt
-    }
-    relationships {
-      field_imatge {
-        publicUrl
-      }
     }
   }
 }

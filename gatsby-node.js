@@ -25,14 +25,14 @@ exports.createPages = async ({ actions, graphql }) => {
   projectes.data.allNodeProjecte.nodes.map(projecteData =>
     createPage({
       path: projecteData.path.alias,
-      component: path.resolve('src/templates/pages.js'),
+      component: path.resolve('src/templates/projecte.js'),
       context: {
         ProjecteId: projecteData.id,
       },
     })
   )
   // fi projectes
-  
+
   // articles
   const articles = await graphql(`
   query MyQuery {

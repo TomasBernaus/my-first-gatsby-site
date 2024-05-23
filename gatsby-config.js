@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-drupal`,
       options: {
         skipFileDownloads: true,
-        baseUrl: `http://localhost/drupal/drupal/web/`,
+        baseUrl: `http://localhost/drupal/`,
         apiBase: `jsonapi`, // optional, defaults to `jsonapi`
       },
     },

@@ -33,11 +33,6 @@ query MyQuery {
       path {
         alias
       }
-      field_image {
-        alt
-        title
-        drupal_internal__target_id
-      }
     }
   }
 }
