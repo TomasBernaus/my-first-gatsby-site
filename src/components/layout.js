@@ -1,19 +1,24 @@
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import {
   container,
   heading,
   navLinks,
   navLinkItem,
   navLinkText,
-  siteTitle,
+  // siteTitle,
 } from './layout.module.css'
+import Footer from './footer';
+
+// import '../../public/assets/css/bootstrap.min.css';
+// import '../../public/assets/css/themify-icons.css';
+import '../../public/assets/css/style.css';
+import '../../public/assets/css/responsive.css';
 
 
 const Layout = ({ pageTitle, children }) => {
     return (
       <div className={container}>
-        {/* <header className={siteTitle}>hola</header> */}
         <nav>
           <ul className={navLinks}>
             <li className={navLinkItem}>
@@ -42,6 +47,7 @@ const Layout = ({ pageTitle, children }) => {
           <h1 className={heading}>{pageTitle}</h1>
           {children}
         </main>
+        <Footer />
       </div>
     )
   }

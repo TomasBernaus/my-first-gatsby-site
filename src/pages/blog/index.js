@@ -34,6 +34,15 @@ query MyQuery {
         alias
       }
     }
+    edges {
+      node {
+        relationships {
+          field_image {
+            url
+          }
+        }
+      }
+    }
   }
 }
 `

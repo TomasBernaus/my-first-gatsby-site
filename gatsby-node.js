@@ -1,6 +1,6 @@
-const { graphql } = require('gatsby');
+// const { graphql } = require('gatsby');
 const path = require('path');
-const { graphqlTypegen } = require('./gatsby-config');
+// const { graphqlTypegen } = require('./gatsby-config');
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -28,6 +28,7 @@ exports.createPages = async ({ actions, graphql }) => {
       component: path.resolve('src/templates/projecte.js'),
       context: {
         ProjecteId: projecteData.id,
+        title: projecteData.title,
       },
     })
   )
@@ -57,6 +58,7 @@ exports.createPages = async ({ actions, graphql }) => {
       component: path.resolve('src/templates/article.js'),
       context: {
         ArticleId: articleData.id,
+        title: articleData.title,
       },
     })
   )

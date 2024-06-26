@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { propTypes } from 'prop-types';
 import { graphql } from 'gatsby';
+import Seo from '../components/seo'
 
 import Layout from '../components/layout';
 
 const PlantillaProjecte = ({data}) => {
+  
   const post = data.nodeProjecte;
-
   return (
     <Layout>
       <h1>{post.title}</h1>
@@ -36,4 +37,5 @@ query($ProjecteId: String!) {
 }
 `;
 
+export const Head = ({ pageContext }) => <Seo title={pageContext.title} />;
 export default PlantillaProjecte;

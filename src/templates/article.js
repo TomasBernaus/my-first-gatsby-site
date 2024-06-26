@@ -1,27 +1,24 @@
 import * as React from 'react';
-import { propTypes } from 'prop-types';
 import { graphql } from 'gatsby';
-
+import Seo from '../components/seo';
 import Layout from '../components/layout';
 
-const PlantillaArticle = ({data}) => {
+const PlantillaArticle = ({ data }) => {
   const post = data.nodeArticle;
 
   return (
     <Layout>
       <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html:post.body.processed}}/>
-      {post.relationships && post.relationships.field_image 
-      // && (
-        // <img
-        //   src={post.relationships.field_image.publicUrl}
-        //   alt={post.field_image.alt} 
-        //   style={{ maxWidth: '100%', height: 'auto' }}
-        // />
-      // )
-      }
+      <div dangerouslySetInnerHTML={{ __html: post.body.processed }} />
+      {post.relationships && post.relationships.field_image && (
+        <img
+          src={post.relationships.field_image.url}
+          alt={post.relationships.field_image.alt || 'Article Image'}
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
+      )}
     </Layout>
-  )
+  );
 };
 
 export const query = graphql`
@@ -32,8 +29,14 @@ query($ArticleId: String!) {
     body {
       processed
     }
+    relationships {
+      field_image {
+        url
+      }
+    }
   }
 }
 `;
 
+export const Head = ({ pageContext }) => <Seo title={pageContext.title} />;
 export default PlantillaArticle;
