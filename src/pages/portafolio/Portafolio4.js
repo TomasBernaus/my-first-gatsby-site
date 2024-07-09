@@ -1,53 +1,44 @@
 import React, { useState, useEffect } from "react";
 import _data from "../../data";
 
-const Portafolio1 = () => {
-    const [ setAboutUs] = useState({});
+const Portafolio4 = () => {
+  const [aboutUs, setAboutUs] = useState({});
 
-    useEffect(() => {
-        /**
-         * Your ajax will goes here to get data then call setState
-         */
-        setAboutUs(_data.ITDOaboutUs1);
-    }, []);
+  useEffect(() => {
+    setAboutUs(_data.ITDOaboutUs1);
+  }, []);
 
-    return (
-        <section
-            id="Portafolio1"
-            className="imageblock-section switchable switchable-content pt-5">
-            <div className="container">
-                <div className="row align-items-center">
-                    <div className="col-lg-5 col-md-5">
-                        <div className="about-content ml-20">
-                            <div className="img-logo">
-                                <img
-                                    data-src="https://ik.imagekit.io/tbernaus/itdo%20portafolio/logos/kas%20logo.png?updatedAt=1700487128923"
-                                    src="https://ik.imagekit.io/tbernaus/itdo%20portafolio/logos/kas%20logo.png?updatedAt=1700487128923"
-                                    alt="Kids And Us"
-                                    className="img-fluid"
-                                />
-                            </div>
-
-                            <p><a href="https://www.kidsandus.es/es">Kids&Us</a> es un centro de idiomas con un método que se basa en el proceso natural de
-                                adquisición de la lengua materna, un camino de aprendizaje que sigue un orden lógico, natural y espontáneo. El sitio web ha
-                                sido actualizado con GatsbyJS y Drupal como CMS mediante una metodología JAMStack y Devops,
-                                <strong> mejorando el tiempo de compilación del sitio web</strong>, el performance <strong>y los costes de infraestructura.</strong>
-                            </p>
-
-                        </div>
-                    </div>
-                    <div className="col-lg-7 col-md-7 order-first order-md-last">
-                        <img
-                            data-src="https://ik.imagekit.io/tbernaus/kidsandus.png?updatedAt=1700145823323"
-                            src="https://ik.imagekit.io/tbernaus/kidsandus.png?updatedAt=1700145823323"
-                            alt="Kids&us"
-                            className="img-fluid img-with-shadow-br"
-                        />
-                    </div>
-                </div>
+  return (
+    <section id="Portafolio4" className="gray-light-bg imageblock-section switchable switchable-content pt-5">
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-lg-7 col-md-7">
+            <img
+              src="https://ik.imagekit.io/tbernaus/itdo%20portafolio/gdb.png?updatedAt=1700223241619"
+              alt="Guías de Barcelona."
+              className="img-fluid img-with-shadow-bl"
+            />
+          </div>
+          <div className="col-lg-5 col-md-5">
+            <div className="about-content ml-20">
+              <div className="img-logo">
+                <img
+                  src="https://ik.imagekit.io/tbernaus/itdo%20portafolio/logos/gdb_logo-removebg.png?updatedAt=1700557343652"
+                  alt="Guías de Barcelona"
+                  className="img-fluid"
+                />
+              </div>
+              <p className="right-text">
+                <a href="https://www.guiasdebarcelona.com/">Guias de Barcelona</a> es una organización con más de 15 años de experiencia mostrando
+                Barcelona a más de 2.000 visitantes, resaltando diversión, cultura e historia. Este sitio web ha sido desarrollado en WordPress
+                con funcionalidad de comercio electrónico integrada. Experimenta un sitio web dinámico y atractivo diseñado para impulsar tus ventas en línea.
+              </p>
             </div>
-        </section>
-    );
-}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default Portafolio1;
+export default Portafolio4;

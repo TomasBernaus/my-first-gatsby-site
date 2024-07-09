@@ -1,3 +1,4 @@
+// about page
 import React from 'react'
 import Layout from '../../components/Layout/layout'
 import Seo from '../../components/seo'
@@ -6,7 +7,7 @@ import TeamMember from '../../components/teamMember'
 
 const AboutPage = () => {
   return (
-    <Layout pageTitle="About us">
+    <Layout>
       <About />
       <TeamMember />
     </Layout>

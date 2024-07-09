@@ -1,16 +1,6 @@
-import React, { useState, useEffect } from "react";
-import _data from "../../data";
+import React from "react";
 
 const Portafolio1 = () => {
-    const [ setAboutUs] = useState({});
-
-    useEffect(() => {
-        /**
-         * Your ajax will goes here to get data then call setState
-         */
-        setAboutUs(_data.ITDOaboutUs1);
-    }, []);
-
     return (
         <section
             id="Portafolio1"
@@ -38,8 +28,8 @@ const Portafolio1 = () => {
                     </div>
                     <div className="col-lg-7 col-md-7 order-first order-md-last">
                         <img
-                            data-src="https://ik.imagekit.io/tbernaus/kidsandus.png?updatedAt=1700145823323"
-                            src="https://ik.imagekit.io/tbernaus/kidsandus.png?updatedAt=1700145823323"
+                            data-src="https://ik.imagekit.io/tbernaus/itdo%20portafolio/kidsandus.png?updatedAt=1700223241621"
+                            src="https://ik.imagekit.io/tbernaus/itdo%20portafolio/kidsandus.png?updatedAt=1700223241621"
                             alt="Kids&us"
                             className="img-fluid img-with-shadow-br"
                         />

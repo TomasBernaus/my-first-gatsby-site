@@ -1,53 +1,48 @@
 import React, { useState, useEffect } from "react";
 import _data from "../../data";
 
-const Portafolio1 = () => {
-    const [ setAboutUs] = useState({});
+const Portafolio3 = () => {
+  const [aboutUs, setAboutUs] = useState({});
 
-    useEffect(() => {
-        /**
-         * Your ajax will goes here to get data then call setState
-         */
-        setAboutUs(_data.ITDOaboutUs1);
-    }, []);
+  useEffect(() => {
+    setAboutUs(_data.ITDOaboutUs1);
+  }, []);
 
-    return (
-        <section
-            id="Portafolio1"
-            className="imageblock-section switchable switchable-content pt-5">
-            <div className="container">
-                <div className="row align-items-center">
-                    <div className="col-lg-5 col-md-5">
-                        <div className="about-content ml-20">
-                            <div className="img-logo">
-                                <img
-                                    data-src="https://ik.imagekit.io/tbernaus/itdo%20portafolio/logos/kas%20logo.png?updatedAt=1700487128923"
-                                    src="https://ik.imagekit.io/tbernaus/itdo%20portafolio/logos/kas%20logo.png?updatedAt=1700487128923"
-                                    alt="Kids And Us"
-                                    className="img-fluid"
-                                />
-                            </div>
-
-                            <p><a href="https://www.kidsandus.es/es">Kids&Us</a> es un centro de idiomas con un método que se basa en el proceso natural de
-                                adquisición de la lengua materna, un camino de aprendizaje que sigue un orden lógico, natural y espontáneo. El sitio web ha
-                                sido actualizado con GatsbyJS y Drupal como CMS mediante una metodología JAMStack y Devops,
-                                <strong> mejorando el tiempo de compilación del sitio web</strong>, el performance <strong>y los costes de infraestructura.</strong>
-                            </p>
-
-                        </div>
-                    </div>
-                    <div className="col-lg-7 col-md-7 order-first order-md-last">
-                        <img
-                            data-src="https://ik.imagekit.io/tbernaus/kidsandus.png?updatedAt=1700145823323"
-                            src="https://ik.imagekit.io/tbernaus/kidsandus.png?updatedAt=1700145823323"
-                            alt="Kids&us"
-                            className="img-fluid img-with-shadow-br"
-                        />
-                    </div>
-                </div>
+  return (
+    <section id="Portafolio3" className="imageblock-section switchable switchable-content pt-5">
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-lg-5 col-md-5">
+            <div className="about-content ml-20">
+              <div className="img-logo">
+                <img
+                  src="https://ik.imagekit.io/tbernaus/itdo%20portafolio/logos/botanical%20%20logo.png?updatedAt=1700487127608"
+                  alt="Botanical"
+                  className="img-fluid"
+                />
+              </div>
+              <p>
+                <a href="https://botanical-responsiblefabrics.com/">BOTANICAL</a> es un equipo de expertos de la industria con más de 50 años de
+                experiencia y conocimiento en todos los aspectos de la fabricación textil, desde la planta de procesamiento húmedo hasta la tela
+                y el hilo. Este sitio web ha sido <strong>meticulosamente diseñado y desarrollado con programación a medida.</strong>
+                La solución personalizada refleja la singularidad de los objetivos y requisitos del proyecto,
+                permitiendo una experiencia en línea completamente única y adaptada a las necesidades específicas.
+                Cada aspecto del sitio demuestra el esfuerzo dedicado a crear una solución exclusiva y precisa.
+              </p>
             </div>
-        </section>
-    );
-}
+          </div>
+          <div className="col-lg-7 col-md-7 order-first order-md-last">
+            <img
+              src="https://ik.imagekit.io/tbernaus/itdo%20portafolio/botanical.png?updatedAt=1700223241416"
+              alt="Botanical"
+              className="img-fluid img-with-shadow-br"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default Portafolio1;
+export default Portafolio3;

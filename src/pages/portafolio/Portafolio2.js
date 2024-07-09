@@ -1,16 +1,6 @@
-import React, { useState, useEffect } from "react";
-import _data from "../../data";
+import React from "react";
 
 const Portafolio2 = () => {
-  const [ setAboutUs] = useState({});
-
-  useEffect(() => {
-    /**
-     * Your ajax will goes here to get data then call setState
-     */
-    setAboutUs(_data.ITDOaboutUs1);
-  }, []);
-
   return (
     <section
       id="Portafolio2"

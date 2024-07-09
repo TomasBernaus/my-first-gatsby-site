@@ -1,6 +1,6 @@
 import React from 'react';
-// import Layout from '../components/Layout/layout'
-// import HeroSection from '../components/HeroSection/heroSectionITDO';
+import Layout from '../components/Layout/layout'
+import HeroSection from '../components/HeroSection/heroSectionITDO';
 // import AboutSection1 from '../components/AboutUs/AboutUsITDO1';
 // import AboutSection2 from '../components/AboutUs/AboutUsITDO2';
 // import Pricing from '../components/Pricing';
