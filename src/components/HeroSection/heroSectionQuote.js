@@ -11,14 +11,6 @@ const HeroSectionQuote = ({ backgroundImage = 'https://ik.imagekit.io/itdo/ITDO-
   return (
     <React.Fragment>
       <section
-        className="hero-section hero-quote background-img ptb-100"
-        style={{
-          background: `url(${backgroundImage})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "0 -400px",
-          backgroundSize: "center / cover",
-          backgroundAttachment: ""
-        }}
       >
         <div className="container">
           <div className="row justify-content-center">
