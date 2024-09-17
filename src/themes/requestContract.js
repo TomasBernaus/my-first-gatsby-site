@@ -96,6 +96,7 @@ const RequestContract = ({ dispatch, url_success_form, email_template }) => {
   );
 };
 
-export default connect(state => ({
-  state
-}))(RequestContract);
+// export default connect(state => ({
+//   state
+// }))(RequestContract);
+export default RequestContract;

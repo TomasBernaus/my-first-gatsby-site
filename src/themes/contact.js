@@ -1,7 +1,7 @@
 import React from 'react';
 // import Layout from '../components/Layout/layout';
 import HeroSection from '../components/HeroSection/heroSectionContact';
-import Contacto from '../components/Quote/Contacto';
+import Contacto from '../pages/Quote/Contacto';
 
 const ContactPage = () => {
     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { getQuote } from "../../actizons/index";
 import Notifications, { notify } from "react-notify-toast";
 
@@ -236,6 +236,8 @@ class HeroSection extends React.Component {
   }
 }
 
-export default connect(state => ({
-  state
-}))(HeroSection);
+// export default connect(state => ({
+//   state
+// }))(HeroSection);
+
+export default HeroSection;

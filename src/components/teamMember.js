@@ -1,14 +1,6 @@
-import React, { useState, useEffect } from "react";
-import _data from "../data";
+import React from "react";
 
 const TeamMember = () => {
-  const [teamMember, setTeamMember] = useState({});
-
-  useEffect(() => {
-    // Aquí es donde puedes hacer una llamada AJAX para obtener datos
-    setTeamMember(_data.teamMember);
-  }, []);
-
   return (
 <section className="team-member-section  ptb-100">
           <div className="container">

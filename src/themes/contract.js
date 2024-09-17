@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout/layout'
 import HeroSection from '../components/HeroSection/heroSectionQuote';
-import RequestContract from '../components/Contact/RequestContract';
+import RequestContract from '../pages/Contact/RequestContract';
 
 const ContractPage = ({ data }) => {
     const plan = data.params.plan;

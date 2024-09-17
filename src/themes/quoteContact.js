@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout/layout'
 import HeroSection from '../components/HeroSection/heroSectionQuoteContact';
-import RequestQuoteSection from '../components/Quote/Contact';
+import RequestQuoteSection from '../pages/Quote/Contact';
 
 const QuoteContactPage = ({ pageContext }) => {
     const { service, description } = pageContext;

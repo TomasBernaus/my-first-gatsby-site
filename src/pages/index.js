@@ -1,3 +1,4 @@
+// home page
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout/layout';
@@ -28,7 +29,7 @@ const IndexPage = ({ data }) => {
     );
   }
 
-  const { id, title, body } = homePage.node;
+  // const { id, title, body } = homePage.node;
 
   return (
     <Layout>

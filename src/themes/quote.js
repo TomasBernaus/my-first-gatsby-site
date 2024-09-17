@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout/layout'
 import HeroSection from '../components/HeroSection/heroSectionQuote';
-import RequestQuoteSection from '../components/Contact/RequestQuote';
+import RequestQuoteSection from '../pages/Contact/RequestQuote';
 
 const QuotePage = ({ description }) => {
     return (

@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from "react";
-import _data from "../../data";
+import React from "react";
 
 const Portafolio5 = () => {
-  const [aboutUs, setAboutUs] = useState({});
-
-  useEffect(() => {
-    setAboutUs(_data.ITDOaboutUs1);
-  }, []);
-
   return (
     <section id="Portafolio5" className="imageblock-section switchable switchable-content pt-5">
       <div className="container">
