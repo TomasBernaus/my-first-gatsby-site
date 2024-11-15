@@ -14,7 +14,7 @@ const ActionToCall3 = () => {
             </div>
             <div className="col-11">
               <div className="call-to-action-btn text-center">
-                <a href="/pedir-presupuesto/desarrollo-web" className="btn solid-btn">PEDIR PRESUPUESTO</a>
+                <a href="/desarrollo-web" className="btn solid-btn">PEDIR PRESUPUESTO</a>
               </div>
             </div>
           </div>

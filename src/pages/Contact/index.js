@@ -1,6 +1,10 @@
 import React, { useState, useRef } from "react";
+import HeroSectionQuote from "../../components/HeroSection/heroSectionQuote";
 import emailjs from '@emailjs/browser';
 import { navigate } from 'gatsby';
+// import Layout from '../../components/Layout/layout';
+import Header from '../../components/Header/header';
+import Footer from '../../components/Footer/footer';
 
 const Contact = () => {
   const form = useRef();
@@ -76,12 +80,18 @@ const Contact = () => {
   };
 
   return (
-    <React.Fragment>
+    <div>
+      <Header />
       <section>
+        <HeroSectionQuote
+      backgroundImage="https://ik.imagekit.io/itdo/ITDO-freelance6_xH56McWwC.jpg"
+      title="Bienvenido a ITDO"
+      description="Expertos en soluciones digitales"
+    />
         <div className="container">
           <div className="row align-items-center justify-content-between">
             <div className="col-md-12 col-lg-12">
-              <div className="sign-up-form-wrap position-relative rounded p-5 gray-light-bg mt-minus50">
+              <div className="sign-up-form-wrap position-relative rounded p-5 gray-light-bg mt-150">
                 <div className="sign-up-form-header text-center mb-4 hide">
                   <h4 className="mb-0">Contacto</h4>
                   <p>Rellena este formulario y tendrás tu presupuesto en menos de 24h</p>
@@ -158,6 +168,7 @@ const Contact = () => {
                         }
                       }}
                     />
+                    {/* <a href="/muchas-gracias">simula</a> */}
                   </div>
                 </form>
               </div>
@@ -165,7 +176,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </React.Fragment>
+      <Footer />
+      </div>
   );
 };
 

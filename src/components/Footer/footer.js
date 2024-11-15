@@ -34,7 +34,7 @@ const Footer = () => {
 							                  				<span className="footer-sub-menu"><i className="ti-arrow-circle-right mr-2"></i>  Desarrollo personalizado</span>
 							                  				<ul className="list-unstyled"> 
 									                  		{/* <li className="mb-2 ml-2"><a className="page-scroll" href={ (this.props.location.pathname === "/" ? "/#desarrollo" : "/" )}>Desarrollo de páginas web </a></li> */}
-									                  		<li className="mb-2 ml-2"><a className="" href="/desarrollo-web-avanzado-a-medida">Desarrollo Web a medida</a></li>
+									                  		<li className="mb-2 ml-2"><a className="" href="/desarrollo-web-a-medida">Desarrollo Web a medida</a></li>
 									                  		<li className="mb-2 ml-2"><a className="" href="/desarrollo-app">Desarrollo APP</a></li>
 									                  		<li className="mb-2 ml-2"><a className="" href="/pedir-presupuesto/automatizacion-erp-crm">Automatización: Integración ERP y/o CRM</a></li>
 									                  		<li className="mb-2 ml-2"><a className="" href="/pedir-presupuesto/diseno-web-ui-ux">Diseño web UI/UX</a></li>
@@ -65,7 +65,7 @@ const Footer = () => {
 		                                    <li className="mb-2 col-md-6"><i className="ti-arrow-circle-right mr-2"></i> <a className="page-scroll"
 												href={ (this.props.location.pathname === "/" ? "/#precios-desarrollo-web" : "/#precios-desarrollo-web" )} >Planes & Precios </a> </li> */}
 											<li className="mb-2 col-md-6"><i className="ti-arrow-circle-right mr-2"></i> <a href="/blog/">Blog</a></li>
-		                                    <li className="mb-2 col-md-6"><i className="ti-arrow-circle-right mr-2"></i> <a href="/contacto" className="">Contacto</a></li>
+		                                    <li className="mb-2 col-md-6"><i className="ti-arrow-circle-right mr-2"></i> <a href="/Contact" className="">Contacto</a></li>
 										</ul>
                                     </div>
                                 </div>

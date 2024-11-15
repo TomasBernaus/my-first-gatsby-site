@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { getQuote } from "../../actions/index";
 import Notifications, { notify } from "react-notify-toast";
 import emailjs from 'emailjs-com';
@@ -18,7 +18,7 @@ const ContractSection = ({ history, title = 'Píde un presupuesto', description 
         loading: false
     });
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const changeBtnText = (btnText) => {
         setFormData(prevState => ({ ...prevState, btnText }));
@@ -45,7 +45,7 @@ const ContractSection = ({ history, title = 'Píde un presupuesto', description 
             phone: formData.phone
         });
 
-        dispatch(quoteAction);
+        // dispatch(quoteAction);
 
         setTimeout(() => {
             setFormData({

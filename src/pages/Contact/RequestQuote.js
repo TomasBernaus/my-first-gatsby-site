@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { submitContact } from "../../actions/index";
 import Notifications, { notify } from "react-notify-toast";
 import Quote from '../Quote';
@@ -18,52 +18,52 @@ const RequestQuotePageSection = () => {
     loading: false,
   });
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const history = useHistory();
 
   const changeBtnText = (contactBtnText) => {
     setFormData((prevState) => ({ ...prevState, contactBtnText }));
   };
 
-  const handleFormValueChange = (inputName, event) => {
-    const value =
-      event.target.type === "checkbox"
-        ? event.target.checked
-        : event.target.value;
-    setFormData((prevState) => ({ ...prevState, [inputName]: value }));
-  };
+  // const handleFormValueChange = (inputName, event) => {
+  //   const value =
+  //     event.target.type === "checkbox"
+  //       ? event.target.checked
+  //       : event.target.value;
+  //   setFormData((prevState) => ({ ...prevState, [inputName]: value }));
+  // };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
 
-    setFormData((prevState) => ({ ...prevState, disableContactBtn: true, loading: true }));
+  //   setFormData((prevState) => ({ ...prevState, disableContactBtn: true, loading: true }));
 
-    const contactAction = submitContact(formData);
-    const templateId = "welcome_to_costumer_web";
+  //   const contactAction = submitContact(formData);
+  //   const templateId = "welcome_to_costumer_web";
 
-    sendFeedback(templateId, {
-      message_html: formData.message,
-      from_name: formData.name,
-      email: formData.email,
-      from_company: formData.company,
-      from_phone: formData.phone,
-    });
+  //   sendFeedback(templateId, {
+  //     message_html: formData.message,
+  //     from_name: formData.name,
+  //     email: formData.email,
+  //     from_company: formData.company,
+  //     from_phone: formData.phone,
+  //   });
 
-    dispatch(contactAction);
+  //   // dispatch(contactAction);
 
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: "",
-        disableContactBtn: false,
-        contactBtnText: "Send Message",
-        loading: false,
-      });
-    }, 3000);
-  };
+  //   setTimeout(() => {
+  //     setFormData({
+  //       name: "",
+  //       email: "",
+  //       phone: "",
+  //       company: "",
+  //       message: "",
+  //       disableContactBtn: false,
+  //       contactBtnText: "Send Message",
+  //       loading: false,
+  //     });
+  //   }, 3000);
+  // };
 
   const sendFeedback = (templateId, variables) => {
     emailjs

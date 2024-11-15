@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 // import { connect } from "react-redux";
 // import { withRouter } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { Link } from 'gatsby'
+
 
 const Header = (props) => {
   const [pageTitle, setPageTitle] = useState("");
   const [pageDescription, setPageDescription] = useState("");
   const url_what = "/#por-que-itdo-en-el-desarrollo";
   const url_price = "/#precios-desarrollo";
-  const url_cta = "/pedir-presupuesto/desarrollo-web";
+  const url_cta = "/desarrollo-web";
 
   useEffect(() => {
     getPageTitle();
@@ -32,7 +34,7 @@ const Header = (props) => {
       case "/desarrollo-app":
         output = "Desarrollo APP | Pide un presupuesto | itdo.com";
         break;
-      case "/pedir-presupuesto/desarrollo-web":
+      case "/desarrollo-web":
         output = "Desarrollo Web | Pide un presupuesto | itdo.com";
         break;
       case "/contratar-desarrollo-web/Básico":
@@ -47,28 +49,28 @@ const Header = (props) => {
       case "/blog":
         output = "Desarrollo Web | Blog | itdo.com";
         break;
-      case "/pedir-presupuesto/desarrollo-web-a-medida":
+      case "/desarrollo-web-a-medida":
         output = "Desarrollo Web a medida | Pide un presupuesto | itdo.com";
         break;
-      case "/pedir-presupuesto/desarrollo-app":
+      case "/desarrollo-app":
         output = "Desarrollo APP | Pide un presupuesto | itdo.com";
         break;
-      case "/pedir-presupuesto/automatizacion-erp-crm":
+      case "/automatizacion-erp-crm":
         output = "Automatización: Integración ERP y/o CRM | Pide un presupuesto | itdo.com";
         break;
-      case "/pedir-presupuesto/diseno-web-ui-ux":
+      case "/diseno-web-ui-ux":
         output = "Diseño web UI/UX | Pide un presupuesto | itdo.com";
         break;
-      case "/pedir-presupuesto/por-que-no-posiciona-mi-web":
+      case "/por-que-no-posiciona-mi-web":
         output = "¿Por qué no posiciona mi web? | Pide un presupuesto | itdo.com";
         break;
-      case "/pedir-presupuesto/auditoria-posicionamiento-SEO":
+      case "/auditoria-posicionamiento-SEO":
         output = "Auditoria y posicionamiento SEO | Pide un presupuesto | itdo.com";
         break;
-      case "/pedir-presupuesto/analisis-redes-sociales":
+      case "/analisis-redes-sociales":
         output = "Análisis de Redes Sociales | Pide un presupuesto | itdo.com";
         break;
-      case "/pedir-presupuesto/captacion-fidelizacion-clientes-CRM":
+      case "/captacion-fidelizacion-clientes-CRM":
         output = "Captación y fidelización de clientes CRM | Pide un presupuesto | itdo.com";
         break;
       default:
@@ -91,7 +93,7 @@ const Header = (props) => {
       "Somos una empresa de desarrollo, expertos en creación de páginas web y APPs. ¡Pide tu presupuesto a medida!";
     switch (pathname) {
       case "/":
-      case "/pedir-presupuesto/desarrollo-web":
+      case "/desarrollo-web":
         output =
           "Somos una empresa de desarrollo, expertos en creación de páginas web y APPs. ¡Pide tu presupuesto a medida!";
         break;
@@ -105,7 +107,7 @@ const Header = (props) => {
         output =
           "Necesitas un sitio web profesional ¡Pide tu presupuesto a ahora!";
         break;
-      case "/contacto":
+      case "/Contact":
         output =
           "Necesitas un sitio web o APP profesional ¡Pide tu presupuesto a ahora!";
         break;
@@ -146,6 +148,10 @@ const Header = (props) => {
           property="twitter:image"
           content="https://ik.imagekit.io/itdo/ITDO-freelance6_xH56McWwC.jpg"
         />
+        <link rel="icon" href="/img/ico/ITDO-icon-60px.png" type="image/png" sizes="60x60"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR3kW7HQ5pmpy5Lg5tLbKoPpf9p5Txjt4MXVfD4f8" crossOrigin="anonymous"></script>
+        <script src="/js/script.js" type="text/javascript" />
+  
         {/* <link
           rel="canonical"
           href={`http://www.itdo.com${props.location.pathname}`}
@@ -155,12 +161,12 @@ const Header = (props) => {
         <nav className="navbar navbar-expand-lg fixed-top bg-transparent">
           <div className="container">
             <a className="navbar-brand" href="/">
-              <img
-                src="/img/logo-wf.png"
-                width="100"
-                alt="logo"
-                className="img-fluid"
-              />
+            <img
+                  src="/img/logo-wf.png"
+                  width="100"
+                  alt="logo"
+                  className="img-fluid"
+                />
             </a>
             <button
               className="navbar-toggler"
@@ -197,74 +203,90 @@ const Header = (props) => {
                   >
                     <div className="content">
                       <div className="col-md-12">
+                        <strong>Desarrollo personalizado "Concierge"</strong>
+
                         <span
-                          className="dropdown-item text-center"
-                          href="/desarrollo-app"
+                          className="dropdown-item"
+                          href="/"
                         >
-                          <a href="/desarrollo-app">Desarrollo App</a>
-                        </span>
-                        <span
-                          className="dropdown-item text-center"
-                          href="/pedir-presupuesto/desarrollo-web"
-                        >
-                          <a href="/pedir-presupuesto/desarrollo-web">
-                            Desarrollo Web
+                          <a href="/">
+                            Desarrollo de páginas web
                           </a>
                         </span>
                         <span
-                          className="dropdown-item text-center"
-                          href="/pedir-presupuesto/desarrollo-web-a-medida"
+                          className="dropdown-item"
+                          href="/desarrollo-web-a-medida"
                         >
-                          <a href="/pedir-presupuesto/desarrollo-web-a-medida">
+                          <a href="/desarrollo-web-a-medida">
                             Desarrollo Web a Medida
                           </a>
                         </span>
                         <span
-                          className="dropdown-item text-center"
-                          href="/pedir-presupuesto/automatizacion-erp-crm"
+                          className="dropdown-item"
+                          href="/desarrollo-app"
                         >
-                          <a href="/pedir-presupuesto/automatizacion-erp-crm">
-                            Automatización ERP / CRM
-                          </a>
+                          <a href="/desarrollo-app">Desarrollo APP</a>
+                         </span>
+                        <span
+                          className="dropdown-item"
+                        >
+                          <Link to={"/pedir-presupuesto/automatizacion-erp-crm"}>
+                            Automatización: Integración ERP y/o CRM
+                          </Link>
                         </span>
                         <span
-                          className="dropdown-item text-center"
-                          href="/pedir-presupuesto/diseno-web-ui-ux"
+                          className="dropdown-item"
                         >
-                          <a href="/pedir-presupuesto/diseno-web-ui-ux">
+                          <Link to={"/pedir-presupuesto/diseno-web-ui-ux"}>
                             Diseño Web UI/UX
-                          </a>
+                          </Link>
                         </span>
+                      </div>
+
+
+                      <div className="col-md-12">
+
+                        <strong>Consultoría y posicionamiento</strong>
                         <span
-                          className="dropdown-item text-center"
-                          href="/pedir-presupuesto/por-que-no-posiciona-mi-web"
+                          className="dropdown-item"
                         >
-                          <a href="/pedir-presupuesto/por-que-no-posiciona-mi-web">
+                          <Link to={"/pedir-presupuesto/por-que-no-posiciona-mi-web"}>
                             ¿Por qué no posiciona mi web?
-                          </a>
+                          </Link>
                         </span>
                         <span
-                          className="dropdown-item text-center"
-                          href="/pedir-presupuesto/auditoria-posicionamiento-SEO"
+                          className="dropdown-item"
                         >
-                          <a href="/pedir-presupuesto/auditoria-posicionamiento-SEO">
+                          <Link to={"/pedir-presupuesto/transformacion-digital"}>
+                            Transformación digital de tu negocio
+                          </Link>
+                        </span>
+                        <span
+                          className="dropdown-item"
+                        >
+                          <Link to={"/pedir-presupuesto/auditoria-posicionamiento-SEO"}>
                             Auditoría y posicionamiento SEO
-                          </a>
+                          </Link>
                         </span>
                         <span
-                          className="dropdown-item text-center"
-                          href="/pedir-presupuesto/analisis-redes-sociales"
+                          className="dropdown-item"
                         >
-                          <a href="/pedir-presupuesto/analisis-redes-sociales">
+                          <Link to={"/pedir-presupuesto/analisis-redes-sociales"}>
                             Análisis de Redes Sociales
-                          </a>
+                          </Link>
                         </span>
                         <span
-                          className="dropdown-item text-center"
-                          href="/pedir-presupuesto/captacion-fidelizacion-clientes-CRM"
-                        >
-                          <a href="/pedir-presupuesto/captacion-fidelizacion-clientes-CRM">
+                          className="dropdown-item">
+                          <Link to={`/pedir-presupuesto/captacion-fidelizacion-clientes-CRM`}>
                             Captación y fidelización de clientes CRM
+                          </Link>
+                        </span>
+                        <span
+                          className="dropdown-item"
+                          href="/portafolio"
+                        >
+                          <a href="/portafolio">
+                            Portafolio
                           </a>
                         </span>
                       </div>
@@ -292,7 +314,7 @@ const Header = (props) => {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link page-scroll" href="/contacto">
+                  <a className="nav-link page-scroll" href="/Contact">
                     Contacto
                   </a>
                 </li>
@@ -305,6 +327,23 @@ const Header = (props) => {
     </React.Fragment>
   );
 };
+
+
+export const query = graphql`
+query MyQuery {
+  allNodeServices {
+    edges {
+      node {
+        id
+        title
+        field_url
+        field_bgimg
+        field_description
+      }
+    }
+  }
+}
+`
 
 const mapStateToProps = (state) => ({
   title: state.common.title,

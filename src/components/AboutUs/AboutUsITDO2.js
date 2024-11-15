@@ -27,7 +27,7 @@ class AboutUsITDO2 extends React.Component {
                   <p className="lead"> Nuestro equipo de expertos se enfoca en la <strong>satisfacción del cliente y en tu objetivo comercial</strong>.</p>
                   <p className="lead"> Desarrollamos páginas web centradas en personificar tu marca, ofreciendo soluciones web de primera calidad para empresas que buscan un excelente tiempo de respuesta.</p> 
                   <p className="lead"> No todos los negocios necesitan lo mismo, ni todas las páginas web cuestan lo mismo. Nuestros planes te permiten ahorrar y pagar sólo en función de las características que necesites.</p>
-                  <a className="btn solid-btn" href="/pedir-presupuesto/desarrollo-web">PEDIR PRESUPUESTO</a>                
+                  <a className="btn solid-btn" href="/desarrollo-web">PEDIR PRESUPUESTO</a>                
                 </div>
               </div>
               <div className="col-md-6">

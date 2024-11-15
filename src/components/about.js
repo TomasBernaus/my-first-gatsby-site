@@ -23,7 +23,7 @@ const About = () => {
                   </p>
                   <h2>Te ayudamos a tener tu negocio solo a un toque de distancia en dispositivos Android y iPhone.</h2>
                   <p>Nosotros, en ITDO, creamos aplicaciones creativas, y versátiles, centradas en las personas para que tus clientes tengan una experiencia digital atractiva.</p>  
-                  <a className="btn solid-btn" href="/pedir-presupuesto/desarrollo-app">PEDIR PRESUPUESTO</a>                
+                  <a className="btn solid-btn" href="/desarrollo-app">PEDIR PRESUPUESTO</a>                
                 </div>
               </div>
               <div className="col-lg-1 col-md-1"></div>

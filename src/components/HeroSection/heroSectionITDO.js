@@ -1,6 +1,6 @@
 import React from "react";
 // import { connect } from "react-redux";
-import { getQuote } from "../../actizons/index";
+import { getQuote } from "../../actions/index";
 import Notifications, { notify } from "react-notify-toast";
 
 class HeroSection extends React.Component {
@@ -229,7 +229,7 @@ class HeroSection extends React.Component {
               </div>
             </div>
           </div>
-          <a className="icon-scroll page-scroll" href={this.props.location.pathname + "#desarrollo"}>Ver más</a>
+          <a className="icon-scroll page-scroll" href={"#desarrollo"}>Ver más</a>
         </section>
       </React.Fragment>
     );

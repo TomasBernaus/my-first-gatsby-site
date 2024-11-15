@@ -84,7 +84,7 @@ const QuoteSection = ({ title = 'Píde un presupuesto', description = 'Rellena e
                     <div className="row align-items-center justify-content-between">
                         <div className="col-md-12 col-lg-12">
                             <Notifications options={{ zIndex: 200 }} />
-                            <div className="sign-up-form-wrap position-relative rounded p-5 gray-light-bg mt-minus50">
+                            <div className="sign-up-form-wrap position-relative rounded p-5 gray-light-bg mt-50">
                                 <div className="sign-up-form-header text-center mb-4 hide">
                                     <h4 className="mb-0">{title}</h4>
                                     <p>{description}</p>

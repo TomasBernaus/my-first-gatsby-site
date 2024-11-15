@@ -1,14 +1,16 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import Seo from '../components/seo'
-
-import Layout from '../components/Layout/layout';
+// import Layout from '../components/Layout/layout'
+import Header from '../components/Header/header';
+import Footer from '../components/Footer/footer';
 
 const PlantillaProjecte = ({data}) => {
   
   const post = data.nodeProjecte;
   return (
-    <Layout>
+    <div>
+      <Header />
       <h1>{post.title}</h1>
       <div dangerouslySetInnerHTML={{ __html:post.body.processed}}/>
       {post.relationships && post.relationships.field_imatge
@@ -20,7 +22,8 @@ const PlantillaProjecte = ({data}) => {
       //   />
       // )
       }
-    </Layout>
+      <Footer />
+    </div>
   )
 };
 

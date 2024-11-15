@@ -16,7 +16,7 @@ const HeroSectionQuoteContact = ({ backgroundImage = 'https://ik.imagekit.io/itd
           background: `url(${backgroundImage})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "0 -400px",
-          backgroundSize: "center / cover",
+          backgroundSize: "cover",
           backgroundAttachment: ""
         }}
       >

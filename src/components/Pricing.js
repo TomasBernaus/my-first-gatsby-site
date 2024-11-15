@@ -141,7 +141,7 @@ class Pricing extends React.Component {
                     <span className="h6 text-white">a partir de 899€</span>
                     <div className="h6 text-muted mt-10">
                       <a
-                        href='/pedir-presupuesto/desarrollo-web'
+                        href='/desarrollo-web'
                         className="mb-3 text-action"
                       >Pedir presupuesto</a>
                     </div>
@@ -163,7 +163,7 @@ class Pricing extends React.Component {
                       <li><strong>Importación de tu actual web</strong></li>
                     </ul>
                     <a
-                      href='/pedir-presupuesto/desarrollo-web'
+                      href='/desarrollo-web'
                       className="btn mb-3 solid-btn"
                     >
                       PEDIR PRESUPUESTO

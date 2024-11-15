@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby'
 
 class CTA extends React.Component {
   render() {
@@ -16,7 +17,7 @@ class CTA extends React.Component {
               </div>
               <div className="col-11">
                 <div className="call-to-action-btn text-center">
-                  <a href={cta_url} className="btn solid-btn">{cta_text}</a>
+                  <Link to={cta_url} className="btn solid-btn">{cta_text}</Link>
                 </div>
               </div>
             </div>
@@ -26,5 +27,21 @@ class CTA extends React.Component {
     );
   }
 }
+
+export const query = graphql`
+query MyQuery {
+  allNodeServices {
+    edges {
+      node {
+        id
+        title
+        field_url
+        field_bgimg
+        field_description
+      }
+    }
+  }
+}
+`
 
 export default CTA;

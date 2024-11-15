@@ -31,7 +31,7 @@ class AboutUsITDO1 extends React.Component {
                   </p>
                   <h2>Contamos tu historia con una atractiva página web, tienda online o blog</h2>
                   <p>Nuestros diseños y desarrollos web aseguran una experiencia digital atractiva para que tu negocio conecte con las personas. </p>  
-                  <a className="btn solid-btn" href="/pedir-presupuesto/desarrollo-web">PEDIR PRESUPUESTO</a>                
+                  <a className="btn solid-btn" href="/desarrollo-web">PEDIR PRESUPUESTO</a>                
                 </div>
               </div>
               <div className="col-lg-1 col-md-1"></div>

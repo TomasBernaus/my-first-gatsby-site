@@ -1,11 +1,14 @@
 import React from 'react';
-// import Layout from '../components/Layout/layout';
+// import Layout from '../components/Layout/layout'
+import Header from '../components/Header/header'
+import Footer from '../components/Footer/footer'
 import HeroSection from '../components/HeroSection/heroSectionContact';
 import Contacto from '../pages/Quote/Contacto';
 
 const ContactPage = () => {
     return (
-        <Layout>
+        <div>
+          <Header />
             <HeroSection title='Contacto' description={''} backgroundImage='https://ik.imagekit.io/itdo/ITDO-freelance6_xH56McWwC.jpg' />
             <div className="container contact-page ">
                 <div className="row justify-content-between align-items-center">
@@ -26,7 +29,8 @@ const ContactPage = () => {
                     <div className="col-md-3"> </div>
                 </div>
             </div>
-        </Layout>
+      <Footer />
+    </div>
     );
 };
 

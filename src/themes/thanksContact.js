@@ -1,6 +1,8 @@
 // import React from 'react';
 // import { useLocation } from '@reach/router';
-import Layout from '../components/Layout/layout'
+// import Layout from '../components/Layout/layout'
+import Header from '../components/Header/header'
+import Footer from '../components/Footer/footer'
 // import HeroSection from '../components/HeroSection/heroSectionThanks';
 // import PromoSection from '../components/PromoSection/Thanks';
 
@@ -9,7 +11,8 @@ const ThanksContactPage = () => {
     const { name } = location.state.variables;
 
     return (
-        <Layout>
+        <div>
+          <Header />
             <HeroSection title={`¡Muchas gracias ${name}!`} description='En breve nos pondremos en contacto contigo.' backgroundImage='/img/ITDO-freelance5.jpg' />
             <PromoSection items={[
                 {
@@ -28,7 +31,8 @@ const ThanksContactPage = () => {
                     image: "ti-agenda text-white"
                 }
             ]} />
-        </Layout>
+            <Footer />
+          </div>
     );
 };
 

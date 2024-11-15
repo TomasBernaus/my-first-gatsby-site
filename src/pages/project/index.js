@@ -1,11 +1,14 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../../components/Layout/layout'
+// import Layout from '../../components/Layout/layout'
+import Header from '../../components/Header/header'
+import Footer from '../../components/Footer/footer'
 import Seo from '../../components/seo'
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout pageTitle="Projectes">
+    <div>
+      <Header />
       {
         data.allNodeProjecte.nodes.map(node => (
           <article key={node.id}>
@@ -17,7 +20,8 @@ const IndexPage = ({ data }) => {
           </article>
         ))
       }
-    </Layout>
+      <Footer />
+    </div>
   )
 }
 

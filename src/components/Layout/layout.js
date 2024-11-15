@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
+import * as React from 'react';
+import { Link } from 'gatsby';
 import {
   container,
   heading,
@@ -9,12 +9,13 @@ import {
   navLinkText,
   logoContainer,
   navContent,
-  // siteTitle,
-} from './layout.module.css'
+  dropdownMenu,
+  dropdownItem,
+  dropdownToggle,
+  navLinkDropdown,
+} from './layout.module.css';
 import Footer from '../Footer/footer';
 import logoWF from '../../assets/img/logo-wf.png';
-
-
 
 const Layout = ({ pageTitle, children }) => {
   return (
@@ -24,12 +25,45 @@ const Layout = ({ pageTitle, children }) => {
           <img src={logoWF} alt="logo ITDO" />
         </div>
         <div className={navContent}>
-
           <ul className={navLinks}>
             <li className={navLinkItem}>
               <Link to="/" className={navLinkText}>
                 Home
               </Link>
+            </li>
+            <li className={navLinkItem}>
+              <div className={navLinkDropdown}>
+                <button className={dropdownToggle}>
+                  Servicios
+                </button>
+                <ul className={dropdownMenu}>
+                  <li>
+                    <Link to="/desarrollo-app" className={dropdownItem}>
+                      Desarrollo App
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/desarrollo-web" className={dropdownItem}>
+                      Desarrollo Web
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/desarrollo-web-a-medida" className={dropdownItem}>
+                      Desarrollo Web a Medida
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/diseno-web-ui-ux" className={dropdownItem}>
+                      Diseño Web UI/UX
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/automatizacion-erp-crm" className={dropdownItem}>
+                      Automatización ERP/CRM
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li className={navLinkItem}>
               <Link to="/about" className={navLinkText}>
@@ -58,15 +92,12 @@ const Layout = ({ pageTitle, children }) => {
             </li>
           </ul>
         </div>
-
       </nav>
-      <main>
-        <h1 className={heading}>{pageTitle}</h1>
+        {/* <h1 className={heading}>{pageTitle}</h1> */}
         {children}
-      </main>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
