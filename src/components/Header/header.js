@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 // import { withRouter } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Link } from 'gatsby'
+import HeaderScript from '../headerScript';
+
 
 
 const Header = (props) => {
@@ -149,14 +151,16 @@ const Header = (props) => {
           content="https://ik.imagekit.io/itdo/ITDO-freelance6_xH56McWwC.jpg"
         />
         <link rel="icon" href="/img/ico/ITDO-icon-60px.png" type="image/png" sizes="60x60"/>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR3kW7HQ5pmpy5Lg5tLbKoPpf9p5Txjt4MXVfD4f8" crossOrigin="anonymous"></script>
-        <script src="/js/script.js" type="text/javascript" />
-  
+        {/* <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR3kW7HQ5pmpy5Lg5tLbKoPpf9p5Txjt4MXVfD4f8" crossOrigin="anonymous"></script> */}
+        {/* <script src="/js/script.js" type="text/javascript" /> */}
+
         {/* <link
           rel="canonical"
           href={`http://www.itdo.com${props.location.pathname}`}
         /> */}
+
       </Helmet>
+        <HeaderScript />
       <header className="header">
         <nav className="navbar navbar-expand-lg fixed-top bg-transparent">
           <div className="container">

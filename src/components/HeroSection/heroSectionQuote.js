@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import _data from "../../data"; // Ajusta esta ruta según tu estructura de proyecto
+import _data from "../../data"; 
 
 const HeroSectionQuote = ({ backgroundImage = 'https://ik.imagekit.io/itdo/ITDO-freelance6_xH56McWwC.jpg', description, title }) => {
   const [hero, setHero] = useState({});
@@ -33,7 +33,7 @@ const HeroSectionQuote = ({ backgroundImage = 'https://ik.imagekit.io/itdo/ITDO-
           <ul className="list-inline counter-wrap items-contact ">
             <li className="list-inline-item">
               <div className="single-counter text-center">
-                <span><a href="tel:931004545"><i className="ti-mobile"></i></a></span>
+                <span className="icon-span"><a href="tel:931004545"><i className="ti-mobile"></i></a></span>
                 <h4><a href="tel:931004545">93 100 45 45</a></h4>
               </div>
             </li>
@@ -45,13 +45,13 @@ const HeroSectionQuote = ({ backgroundImage = 'https://ik.imagekit.io/itdo/ITDO-
             </li>
             <li className="list-inline-item">
               <div className="single-counter text-center">
-                <span><a href="mailto:aloha@itdo.com"><i className="ti-email"></i></a></span>
+                <span className="icon-span"><a href="mailto:aloha@itdo.com"><i className="ti-email"></i></a></span>
                 <h4><a href="mailto:aloha@itdo.com">aloha@itdo.com</a></h4>
               </div>
             </li>
             <li className="list-inline-item">
               <div className="single-counter text-center">
-                <span><a href="#chat" className="drift-open-chat"><i className="ti-comments"></i></a></span>
+                <span className="icon-span"><a href="#chat" className="drift-open-chat"><i className="ti-comments"></i></a></span>
                 <h4><a href="#chat" className="drift-open-chat">Chat en línea</a></h4>
               </div>
             </li>
