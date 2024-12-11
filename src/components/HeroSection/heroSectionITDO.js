@@ -2,6 +2,7 @@ import React from "react";
 // import { connect } from "react-redux";
 import { getQuote } from "../../actions/index";
 import { toast } from 'react-toastify'; 
+import emailjs from 'emailjs-com';
 
 class HeroSection extends React.Component {
   constructor(props) {

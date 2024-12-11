@@ -22,7 +22,6 @@ const ContractSection = ({ email_template, url_success_form, title = 'Píde un p
     });
 
     const dispatch = useDispatch();
-    const history = useHistory();
 
     const changeBtnText = (btnText) => {
         setFormData(prevState => ({ ...prevState, btnText }));

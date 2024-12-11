@@ -21,7 +21,17 @@ const RequestQuotePageSection = () => {
   });
 
   // const dispatch = useDispatch();
-  const history = useHistory();
+    const sendFeedback = (templateId, variables) => {
+    emailjs.send("gmail", templateId, variables)
+    .then((res) => {
+      console.log("Message successfully sent!");
+      history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
+      toast.success("¡Mensaje enviado con éxito!", { /* ... opciones de toast ... */ });
+    })
+    .catch((err) => {
+      toast.error(`Hubo un error al enviar el mensaje: ${err.message}`, { /* ... opciones de toast ... */ });
+    });
+};
 
   const changeBtnText = (contactBtnText) => {
     setFormData((prevState) => ({ ...prevState, contactBtnText }));
@@ -83,40 +93,7 @@ const RequestQuotePageSection = () => {
   //     );
   // };
   
-  const sendFeedback = (templateId, variables) => {
-    const history = useHistory(); 
   
-    emailjs
-      .send("gmail", templateId, variables)
-      .then((res) => {
-        console.log("Message successfully sent!");
-        history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
-        toast.success("¡Mensaje enviado con éxito!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
-      })
-      .catch((err) => {
-        toast.error(`Hubo un error al enviar el mensaje: ${err.message}`, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
-      });
-  };
-
-
   return (
     <React.Fragment>
       <section className="contact-us-section ptb-100-none gray-light-bg">
