@@ -151,7 +151,7 @@ const Header = (props) => {
           property="twitter:image"
           content="https://ik.imagekit.io/itdo/ITDO-freelance6_xH56McWwC.jpg"
         />
-        <link rel="icon" href="/img/ico/ITDO-icon-60px.png" type="image/png" sizes="60x60"/>
+        <link rel="icon" href="/img/ico/ITDO-icon-60px.png" type="image/png" sizes="60x60" />
         {/* <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLR3kW7HQ5pmpy5Lg5tLbKoPpf9p5Txjt4MXVfD4f8" crossOrigin="anonymous"></script> */}
         {/* <script src="/js/script.js" type="text/javascript" /> */}
 
@@ -161,17 +161,17 @@ const Header = (props) => {
         /> */}
 
       </Helmet>
-        <HeaderScript />
+      <HeaderScript />
       <header className="header">
         <nav className="navbar navbar-expand-lg fixed-top bg-transparent">
           <div className="container">
             <a className="navbar-brand" href="/">
-            <img
-                  src="/img/logo-wf.png"
-                  width="100"
-                  alt="logo"
-                  className="img-fluid"
-                />
+              <img
+                src="/img/logo-wf.png"
+                width="100"
+                alt="logo"
+                className="img-fluid"
+              />
             </a>
             <button
               className="navbar-toggler"
@@ -231,7 +231,7 @@ const Header = (props) => {
                           href="/desarrollo-app"
                         >
                           <a href="/desarrollo-app">Desarrollo APP</a>
-                         </span>
+                        </span>
                         <span
                           className="dropdown-item"
                         >
@@ -299,29 +299,24 @@ const Header = (props) => {
                   </div>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link page-scroll" href={url_what}>
+                  <Link to={url_what}>
                     ¿Por qué ITDO?
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link page-scroll" href={url_price}>
+                  <Link to={url_price}>
                     Precios
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link page-scroll" href={url_cta}>
+                  <Link to={url_cta}>
                     Presupuesto
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link page-scroll" href="/blog">
-                    Blog
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link page-scroll" href="/Contact">
-                    Contacto
-                  </a>
+                  <Link to={`/Contact`}>
+                    contacto
+                  </Link>
                 </li>
               </ul>
             </div>
