@@ -15,7 +15,7 @@ import ActionToCall3 from '../components/ActionToCall/ActionToCall3.js';
 import Header from '../components/Header/header.js';
 import Footer from '../components/Footer/footer.js';
 import LazyContent from '../components/LazyContent.js';
-import TeamMember from '../components/TeamMember';
+import TeamMember from './TeamMember';
 import Business from '../components/Business.js';
 
 const IndexPage = ({ data }) => {
