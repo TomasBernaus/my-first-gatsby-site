@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from 'gatsby'
 import HeaderScript from '../headerScript';
+import { useStaticQuery, graphql } from 'gatsby';
 
 
 
@@ -333,21 +334,6 @@ const Header = (props) => {
 };
 
 
-export const query = graphql`
-query MyQuery {
-  allNodeServices {
-    edges {
-      node {
-        id
-        title
-        field_url
-        field_bgimg
-        field_description
-      }
-    }
-  }
-}
-`
 
 const mapStateToProps = (state) => ({
   title: state.common.title,
