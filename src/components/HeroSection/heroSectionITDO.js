@@ -1,7 +1,7 @@
 import React from "react";
 // import { connect } from "react-redux";
 import { getQuote } from "../../actions/index";
-import Notifications, { notify } from "react-notify-toast";
+import { toast } from 'react-toastify'; 
 
 class HeroSection extends React.Component {
   constructor(props) {
@@ -90,26 +90,52 @@ class HeroSection extends React.Component {
     );
   }
 
+  // sendFeedback(templateId, variables) {
+  //   console.log(templateId);
+  //   window.emailjs
+  //     .send("default_service", templateId, variables)
+  //     .then(res => {
+  //       console.log("Tu pedido de presupuesto ha sido enviado. ¡Gracias!");
+  //       this.props.navigate(this.props.form_redirect_page, {
+  //         state: { response: res, variables: variables }
+  //       });
+  //     })
+  //     // Handle errors here however you like, or use a React error boundary
+  //     .catch(err =>
+  //       notify.show(
+  //         `Oh well, you failed. Here are some thoughts on the error that occurred: ${err}`,
+  //         "error",
+  //         5000
+  //       )
+  //     );
+  // }
+
   sendFeedback(templateId, variables) {
-    console.log(templateId);
-    window.emailjs
-      .send("default_service", templateId, variables)
+    emailjs.send("gmail", templateId, variables)
       .then(res => {
-        console.log("Tu pedido de presupuesto ha sido enviado. ¡Gracias!");
-        this.props.navigate(this.props.form_redirect_page, {
-          state: { response: res, variables: variables }
+        console.log("Message successfully sent!");
+        window.location.replace("/muchas-gracias-desarrollo-web");
+        toast.success("Mensaje enviado con éxito!", {
+          position: "top-right", 
+          autoClose: 5000,     
+          hideProgressBar: false, 
+          closeOnClick: true,  
+          pauseOnHover: true,   
+          draggable: true,       
         });
       })
-      // Handle errors here however you like, or use a React error boundary
-      .catch(err =>
-        notify.show(
-          `Oh well, you failed. Here are some thoughts on the error that occurred: ${err}`,
-          "error",
-          5000
-        )
-      );
+      .catch(err => {
+        toast.error(`Hubo un error: ${err.message}`, {  
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+      });
   }
-
+  
   render() {
     return (
       <React.Fragment>
@@ -131,7 +157,6 @@ class HeroSection extends React.Component {
                     className="lead"
                     dangerouslySetInnerHTML={{ __html: this.props.description }}
                   ></p>
-                  <Notifications options={{ zIndex: 200 }} />
 
                   <div className="client-section-wrap mt-5 d-none d-sm-block">
                     <p dangerouslySetInnerHTML={{ __html: this.props.trusted_title }}></p>

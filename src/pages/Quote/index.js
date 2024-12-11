@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getQuote } from "../../actions/index";
-import Notifications, { notify } from "react-notify-toast";
+// import Notifications, { notify } from "react-notify-toast";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import emailjs from 'emailjs-com';
 import { useHistory } from 'react-router-dom';
 
@@ -65,17 +67,49 @@ const QuoteSection = ({ title = 'Píde un presupuesto', description = 'Rellena e
         }, 3000);
     };
 
+    // const sendFeedback = (templateId, variables) => {
+    //     emailjs.send("default_service", templateId, variables)
+    //         .then(res => {
+    //             console.log("Tu pedido de presupuesto ha sido enviado. ¡Gracias!");
+    //             history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
+    //         })
+    //         .catch(err => {
+    //             console.log(`Oh well, you failed. Here some thoughts on the error that occured: ${err}`);
+    //             notify.show(`Oh well, you failed. Here some thoughts on the error that occured: ${err}`, "error", 5000);
+    //         });
+    // };
     const sendFeedback = (templateId, variables) => {
-        emailjs.send("default_service", templateId, variables)
-            .then(res => {
-                console.log("Tu pedido de presupuesto ha sido enviado. ¡Gracias!");
-                history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
-            })
-            .catch(err => {
-                console.log(`Oh well, you failed. Here some thoughts on the error that occured: ${err}`);
-                notify.show(`Oh well, you failed. Here some thoughts on the error that occured: ${err}`, "error", 5000);
+        const history = useHistory();
+      
+        emailjs
+          .send("gmail", templateId, variables)
+          .then((res) => {
+            console.log("Message successfully sent!");
+            history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
+            toast.success("¡Mensaje enviado con éxito!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
             });
-    };
+          })
+          .catch((err) => {
+            toast.error(`Hubo un error al enviar el mensaje: ${err.message}`, {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+          });
+      };
 
     return (
         <React.Fragment>

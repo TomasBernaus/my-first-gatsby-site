@@ -2,6 +2,9 @@ import React, { useState } from "react";
 // import { connect } from "react-redux";
 // import { submitContact } from "../../actions/index";
 // import Notifications, { notify } from "react-notify-toast";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Contract from '../Quote/Contract';
 
 const RequestContract = ({ dispatch, url_success_form, email_template }) => {
@@ -55,23 +58,55 @@ const RequestContract = ({ dispatch, url_success_form, email_template }) => {
     }, 3000);
   };
 
+  // const sendFeedback = (templateId, variables) => {
+  //   window.emailjs
+  //     .send("gmail", templateId, variables)
+  //     .then(res => {
+  //       console.log("Message successfully sent!");
+  //       window.location.replace(url_success_form);
+  //       notify.show("Message successfully sent!", "success", 5000);
+  //     })
+  //     .catch(err =>
+  //       notify.show(
+  //         `Oh well, you failed. Here some thoughts on the error that occurred: ${err}`,
+  //         "error",
+  //         5000
+  //       )
+  //     );
+  // };
   const sendFeedback = (templateId, variables) => {
-    window.emailjs
+    const history = useHistory();
+  
+    emailjs
       .send("gmail", templateId, variables)
-      .then(res => {
+      .then((res) => {
         console.log("Message successfully sent!");
-        window.location.replace(url_success_form);
-        notify.show("Message successfully sent!", "success", 5000);
+        history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
+        toast.success("¡Mensaje enviado con éxito!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       })
-      .catch(err =>
-        notify.show(
-          `Oh well, you failed. Here some thoughts on the error that occurred: ${err}`,
-          "error",
-          5000
-        )
-      );
+      .catch((err) => {
+        toast.error(`Hubo un error al enviar el mensaje: ${err.message}`, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      });
   };
-
+  
   return (
     <React.Fragment>
       <section className="contact-us-section ptb-100-none gray-light-bg">

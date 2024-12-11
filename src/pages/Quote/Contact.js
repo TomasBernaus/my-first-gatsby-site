@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 // import { useDispatch } from "react-redux";
 import { getQuote } from "../../actions/index";
-import Notifications, { notify } from "react-notify-toast";
+import { useHistory } from 'react-router-dom';
+// import Notifications, { notify } from "react-notify-toast";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import emailjs from 'emailjs-com';
 
 const ContractSection = ({ history, title = 'Píde un presupuesto', description = 'Rellena este formulario y tendrás tu presupuesto en menos de 24h' }) => {
@@ -36,7 +39,7 @@ const ContractSection = ({ history, title = 'Píde un presupuesto', description 
 
         const quoteAction = getQuote(formData);
 
-        sendFeedback("welcome_to_costumer_contact", {
+        SendFeedback("welcome_to_costumer_contact", {
             message_html: formData.message,
             name: formData.name,
             email: formData.email,
@@ -63,14 +66,48 @@ const ContractSection = ({ history, title = 'Píde un presupuesto', description 
         }, 3000);
     };
 
-    const sendFeedback = (templateId, variables) => {
-        emailjs.send("default_service", templateId, variables)
-            .then(res => {
-                console.log("Tu pedido de presupuesto ha sido enviado. ¡Gracias!");
-                history.push('/muchas-gracias', { response: res, variables: variables });
-            })
-            .catch(err => notify.show(`Oh well, you failed. Here some thoughts on the error that occured: ${err}`, "error", 5000));
-    };
+    // const sendFeedback = (templateId, variables) => {
+    //     emailjs.send("default_service", templateId, variables)
+    //         .then(res => {
+    //             console.log("Tu pedido de presupuesto ha sido enviado. ¡Gracias!");
+    //             history.push('/muchas-gracias', { response: res, variables: variables });
+    //         })
+    //         .catch(err => notify.show(`Oh well, you failed. Here some thoughts on the error that occured: ${err}`, "error", 5000));
+    // };
+
+    const SendFeedback = (templateId, variables) => {
+        const history = useHistory(); 
+      
+        emailjs
+          .send("gmail", templateId, variables)
+          .then((res) => {
+            console.log("Message successfully sent!");
+            history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
+            toast.success("¡Mensaje enviado con éxito!", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+          })
+          .catch((err) => {
+            toast.error(`Hubo un error al enviar el mensaje: ${err.message}`, {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+          });
+      };
+
 
     return (
         <React.Fragment>
@@ -78,7 +115,6 @@ const ContractSection = ({ history, title = 'Píde un presupuesto', description 
                 <div className="container">
                     <div className="row align-items-center justify-content-between">
                         <div className="col-md-12 col-lg-12">
-                            <Notifications options={{ zIndex: 200 }} />
                             <div className="sign-up-form-wrap position-relative rounded p-5 gray-light-bg mt-minus50">
                                 <div className="sign-up-form-header text-center mb-4 hide">
                                     <h4 className="mb-0">{title}</h4>

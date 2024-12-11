@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import { connect } from "react-redux";
 import { submitContact } from "../../actions";
-import Notifications, { notify } from "react-notify-toast";
+// import Notifications, { notify } from "react-notify-toast";
+import { toast } from 'react-toastify'; 
 import emailjs from 'emailjs-com';
 import Contract from '../Quote/Contact';
 
@@ -69,27 +70,52 @@ class RequestContract extends Component {
     }, 3000);
   }
 
+  // sendFeedback(templateId, variables) {
+  //   emailjs.send("gmail", templateId, variables)
+  //     .then(res => {
+  //       console.log("Message successfully sent!");
+  //       window.location.replace(this.props.url_success_form);
+  //       notify.show("Message successfully sent!", "success", 5000);
+  //     })
+  //     .catch(err =>
+  //       notify.show(
+  //         `Oh well, you failed. Here some thoughts on the error that occured: ${err}`,
+  //         "error",
+  //         5000
+  //       )
+  //     );
+  // }
+
   sendFeedback(templateId, variables) {
     emailjs.send("gmail", templateId, variables)
       .then(res => {
         console.log("Message successfully sent!");
-        window.location.replace(this.props.url_success_form);
-        notify.show("Message successfully sent!", "success", 5000);
+        window.location.replace("/muchas-gracias-desarrollo-web");
+        toast.success("Mensaje enviado con éxito!", {
+          position: "top-right", 
+          autoClose: 5000,     
+          hideProgressBar: false, 
+          closeOnClick: true,  
+          pauseOnHover: true,   
+          draggable: true,       
+        });
       })
-      .catch(err =>
-        notify.show(
-          `Oh well, you failed. Here some thoughts on the error that occured: ${err}`,
-          "error",
-          5000
-        )
-      );
+      .catch(err => {
+        toast.error(`Hubo un error: ${err.message}`, {  
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+      });
   }
 
   render() {
     return (
       <React.Fragment>
         <section className="contact-us-section ptb-100-none gray-light-bg">
-          <Notifications options={{ zIndex: 200 }} />
           <div className="container">
             <div className="row justify-content-between align-items-center">
               <div className="col-md-2"></div>

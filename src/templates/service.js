@@ -21,7 +21,6 @@ const PlantillaService = ({ data }) => {
           backgroundImage={backgroundImage}
         />
         <section className="contact-us-section ptb-100-none gray-light-bg" >
-            {/* <Notifications options={{ zIndex: 200 }} /> */}
             <div className="container">
                 <div className="row justify-content-between align-items-center">
                     <div className="col-md-2"></div>

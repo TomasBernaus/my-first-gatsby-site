@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { connect } from "react-redux";
 import { submitContact } from "../../actions";
-import Notifications, { notify } from "react-notify-toast";
+import { toast } from 'react-toastify'; 
 import emailjs from 'emailjs-com';
 
 class ContactUsPageSection extends Component {
@@ -68,21 +68,47 @@ class ContactUsPageSection extends Component {
     }, 3000);
   }
 
+  // sendFeedback(templateId, variables) {
+  //   emailjs.send("gmail", templateId, variables)
+  //     .then(res => {
+  //       console.log("Message successfully sent!");
+  //       window.location.replace("/muchas-gracias-desarrollo-web");
+  //       notify.show("Message successfully sent!", "success", 5000);
+  //     })
+  //     .catch(err =>
+  //       notify.show(
+  //         `Oh well, you failed. Here some thoughts on the error that occured: ${err}`,
+  //         "error",
+  //         5000
+  //       )
+  //     );
+  // }
   sendFeedback(templateId, variables) {
     emailjs.send("gmail", templateId, variables)
       .then(res => {
         console.log("Message successfully sent!");
         window.location.replace("/muchas-gracias-desarrollo-web");
-        notify.show("Message successfully sent!", "success", 5000);
+        toast.success("Mensaje enviado con éxito!", {
+          position: "top-right", 
+          autoClose: 5000,     
+          hideProgressBar: false, 
+          closeOnClick: true,  
+          pauseOnHover: true,   
+          draggable: true,       
+        });
       })
-      .catch(err =>
-        notify.show(
-          `Oh well, you failed. Here some thoughts on the error that occured: ${err}`,
-          "error",
-          5000
-        )
-      );
+      .catch(err => {
+        toast.error(`Hubo un error: ${err.message}`, {  
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+      });
   }
+  
 
   render() {
     return (
@@ -92,7 +118,6 @@ class ContactUsPageSection extends Component {
             <div className="row">
               <div className="col-md-9 col-lg-9">
                 <div className="section-heading mb-4">
-                  <Notifications options={{ zIndex: 200 }} />
                   <h2>Reach us quickly</h2>
                   <p className="lead">
                     We provide professional services for grow your business and

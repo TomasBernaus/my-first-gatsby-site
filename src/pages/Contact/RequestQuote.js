@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 // import { useDispatch } from "react-redux";
 import { submitContact } from "../../actions/index";
-import Notifications, { notify } from "react-notify-toast";
+// import Notifications, { notify } from "react-notify-toast";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Quote from '../Quote';
 import { useHistory } from 'react-router-dom';
 import emailjs from 'emailjs-com';
@@ -65,26 +67,59 @@ const RequestQuotePageSection = () => {
   //   }, 3000);
   // };
 
+  // const sendFeedback = (templateId, variables) => {
+  //   emailjs
+  //     .send("gmail", templateId, variables)
+  //     .then((res) => {
+  //       console.log("Message successfully sent!");
+  //       history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
+  //     })
+  //     .catch((err) =>
+  //       notify.show(
+  //         `Oh well, you failed. Here some thoughts on the error that occured: ${err}`,
+  //         "error",
+  //         5000
+  //       )
+  //     );
+  // };
+  
   const sendFeedback = (templateId, variables) => {
+    const history = useHistory(); 
+  
     emailjs
       .send("gmail", templateId, variables)
       .then((res) => {
         console.log("Message successfully sent!");
         history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
+        toast.success("¡Mensaje enviado con éxito!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       })
-      .catch((err) =>
-        notify.show(
-          `Oh well, you failed. Here some thoughts on the error that occured: ${err}`,
-          "error",
-          5000
-        )
-      );
+      .catch((err) => {
+        toast.error(`Hubo un error al enviar el mensaje: ${err.message}`, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      });
   };
+
 
   return (
     <React.Fragment>
       <section className="contact-us-section ptb-100-none gray-light-bg">
-        <Notifications options={{ zIndex: 200 }} />
         <div className="container">
           <div className="row justify-content-between align-items-center">
             <div className="col-md-2"></div>
