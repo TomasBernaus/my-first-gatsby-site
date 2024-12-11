@@ -21,17 +21,17 @@ const RequestQuotePageSection = () => {
   });
 
   // const dispatch = useDispatch();
-    const sendFeedback = (templateId, variables) => {
-    emailjs.send("gmail", templateId, variables)
-    .then((res) => {
-      console.log("Message successfully sent!");
-      history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
-      toast.success("¡Mensaje enviado con éxito!", { /* ... opciones de toast ... */ });
-    })
-    .catch((err) => {
-      toast.error(`Hubo un error al enviar el mensaje: ${err.message}`, { /* ... opciones de toast ... */ });
-    });
-};
+//     const sendFeedback = (templateId, variables) => {
+//     emailjs.send("gmail", templateId, variables)
+//     .then((res) => {
+//       console.log("Message successfully sent!");
+//       history.push('/muchas-gracias-desarrollo-web', { response: res, variables: variables });
+//       toast.success("¡Mensaje enviado con éxito!", { /* ... opciones de toast ... */ });
+//     })
+//     .catch((err) => {
+//       toast.error(`Hubo un error al enviar el mensaje: ${err.message}`, { /* ... opciones de toast ... */ });
+//     });
+// };
 
   const changeBtnText = (contactBtnText) => {
     setFormData((prevState) => ({ ...prevState, contactBtnText }));
