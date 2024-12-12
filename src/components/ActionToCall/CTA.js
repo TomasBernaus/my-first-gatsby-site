@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 
 class CTA extends React.Component {
   render() {
@@ -28,20 +28,5 @@ class CTA extends React.Component {
   }
 }
 
-export const query = graphql`
-query MyQuery {
-  allNodeServices {
-    edges {
-      node {
-        id
-        title
-        field_url
-        field_bgimg
-        field_description
-      }
-    }
-  }
-}
-`
 
 export default CTA;

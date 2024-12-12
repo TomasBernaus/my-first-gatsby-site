@@ -568,7 +568,7 @@ module.exports = {
       "img-remove/client-3-color.png"
     ]
   },
-  TeamMember: {
+  TeamMembers: {
     members: [
       "img-remove/team-1.jpg",
       "img-remove/team-2.jpg",

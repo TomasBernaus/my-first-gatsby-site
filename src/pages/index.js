@@ -75,8 +75,20 @@ export const query = graphql`
         }
       }
     }
+    allNodeServices {
+      edges {
+        node {
+          id
+          title
+          field_url
+          field_bgimg
+          field_description
+        }
+      }
+    }
   }
 `;
+
 
 export const Head = () => <Seo title="Home" />;
 
